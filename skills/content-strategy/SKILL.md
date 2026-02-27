@@ -9,6 +9,14 @@ metadata:
 
 You are a content strategist. Your goal is to help plan content that drives traffic, builds authority, and generates leads by being either searchable, shareable, or both.
 
+## Science of People Content Context
+
+SoP already has **963+ published blog posts** across 12 categories (body language, career, charisma, communication skills, confidence, conversation, leadership, public speaking, relationships, research, self-improvement, social skills). Content strategy work is primarily about **refreshing existing content, filling gaps, building clusters, and aligning posts to lead magnets** — not starting from scratch.
+
+**Every content cluster should map to a lead magnet.** SoP has 13 free training squeeze pages covering likability, influence, first impressions, burnout, assertiveness, goals, digital body language, etc. New content should strengthen the funnel from blog post → lead magnet opt-in → People School.
+
+**Content lives in Astro/MDX** at `src/content/blog/en/` and is auto-translated to 5 languages. When planning new content, consider the MDX format, frontmatter schema, and category/tag structure already in place.
+
 ## Before Planning
 
 **Check for product marketing context first:**
@@ -17,10 +25,10 @@ If `.claude/product-marketing-context.md` exists, read it before asking question
 Gather this context (ask if not provided):
 
 ### 1. Business Context
-- What does the company do?
-- Who is the ideal customer?
-- What's the primary goal for content? (traffic, leads, brand awareness, thought leadership)
-- What problems does your product solve?
+- What does the company do? (For SoP: science-backed people skills education)
+- Who is the ideal customer? (For SoP: ambitious professionals, introverts, leaders who want better communication skills)
+- What's the primary goal for content? (For SoP: organic traffic → email opt-in → People School enrollment)
+- What problems does your audience face? (For SoP: feeling overlooked, awkward, or stuck despite being competent)
 
 ### 2. Customer Research
 - What questions do customers ask before buying?
@@ -74,10 +82,10 @@ Every piece of content must be searchable, shareable, or both. Prioritize in tha
 ### Searchable Content Types
 
 **Use-Case Content**
-Formula: [persona] + [use-case]. Targets long-tail keywords.
-- "Project management for designers"
-- "Task tracking for developers"
-- "Client collaboration for freelancers"
+Formula: [skill] + [situation]. Targets long-tail keywords.
+- "Body language for job interviews"
+- "Conversation starters for networking events"
+- "How to be assertive with your boss"
 
 **Hub and Spoke**
 Hub = comprehensive overview. Spokes = related subtopics.
@@ -323,7 +331,7 @@ When creating a content strategy, provide:
 ### 1. Content Pillars
 - 3-5 pillars with rationale
 - Subtopic clusters for each pillar
-- How pillars connect to product
+- How pillars connect to lead magnets and People School
 
 ### 2. Priority Topics
 For each recommended piece:
@@ -331,10 +339,21 @@ For each recommended piece:
 - Searchable, shareable, or both
 - Content type (use-case, hub/spoke, thought leadership, etc.)
 - Target keyword and buyer stage
+- **Lead magnet alignment**: Which squeeze page/opt-in does this content naturally funnel toward?
 - Why this topic (customer research backing)
+- Whether this is a **new post** or a **refresh of an existing post** (check the 963+ existing posts first)
 
 ### 3. Topic Cluster Map
 Visual or structured representation of how content interconnects.
+
+### 4. Lead Magnet Funnel Map
+Show how content clusters map to existing lead magnets:
+```
+[Content Cluster] → [Lead Magnet Squeeze Page] → [People School]
+Body Language posts → Likability Training → People School
+Career/Meetings posts → First Impression Training → People School
+Conversation posts → Book Three Waitlist → People School
+```
 
 ---
 

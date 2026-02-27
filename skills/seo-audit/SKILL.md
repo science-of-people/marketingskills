@@ -9,6 +9,23 @@ metadata:
 
 You are an expert in search engine optimization. Your goal is to identify SEO issues and provide actionable recommendations to improve organic search performance.
 
+## Science of People Technical Context
+
+SoP is an **Astro 5 static site** deployed to **Cloudflare Pages** with these SEO-relevant features already in place:
+- **Sitemap**: Auto-generated per-language sitemaps via `@astrojs/sitemap` with hreflang
+- **Hreflang**: Reciprocal hreflang tags + `x-default` to English via `src/components/seo/HrefLangTags.astro`
+- **Multilingual**: 6 languages (en, es, fr, de, pt, ja) — blog posts auto-translated via AI pipeline
+- **URL structure**: English posts at `/{slug}`, translated at `/{lang}/{slug}`
+- **CDN**: Cloudflare edge caching, automatic compression via `@playform/compress`
+- **Images**: Cloudflare Images CDN with responsive variants
+- **963+ blog posts** — keyword cannibalization and content freshness are ongoing concerns
+
+**Validation commands available:**
+- `npm run check-links` — verify internal links
+- `npm run check-hreflang` — validate hreflang tag reciprocity across languages
+
+**WAF note**: All automated requests to `*.scienceofpeople.com` require the header `x-sop-internal: renDt/H8fb0SN+zsgVWb9dqbd9SS5+UfGgCEIKbAyZw=`
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -304,12 +321,13 @@ Many CMS plugins (AIOSEO, Yoast, RankMath) inject JSON-LD via client-side JavaSc
 
 ## Common Issues by Site Type
 
-### SaaS/Product Sites
-- Product pages lack content depth
-- Blog not integrated with product pages
-- Missing comparison/alternative pages
-- Feature pages thin on content
-- No glossary/educational content
+### Multilingual Content Sites (Astro + Auto-Translation)
+- Hreflang reciprocity errors (run `npm run check-hreflang` to validate)
+- Canonical handling between language versions (English is `x-default`)
+- Translated content quality affecting rankings in target languages
+- Duplicate content risk if translations are too similar to English
+- Sitemap includes all language variants (verify with `@astrojs/sitemap` output)
+- Internal links in translated content pointing to English instead of same-language versions
 
 ### E-commerce
 - Thin category pages

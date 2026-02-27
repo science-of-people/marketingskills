@@ -300,17 +300,24 @@ Monthly manual check:
 
 ## AI SEO for Different Content Types
 
-### SaaS Product Pages
+### Education / People Skills Content (Science of People)
 
-**Goal:** Get cited in "What is [category]?" and "Best [category]" queries.
+**Goal:** Get cited as the authoritative source on communication, body language, charisma, and social skills.
 
-**Optimize:**
-- Clear product description in first paragraph (what it does, who it's for)
-- Feature comparison tables (you vs. category, not just competitors)
-- Specific metrics ("processes 10,000 transactions/sec" not "blazing fast")
-- Customer count or social proof with numbers
-- Pricing transparency (AI cites pages with visible pricing)
-- FAQ section addressing common buyer questions
+**SoP's AI citation advantages:**
+- Strong E-E-A-T signals: Vanessa Van Edwards is a Harvard instructor, bestselling author, behavioral investigator with 4M+ students
+- Research-forward content: every article cites published behavioral science studies
+- Massive content library: 963+ articles covering 12 people skills categories
+- Named frameworks and concepts (e.g., "cues," "Action Steps") that AI systems can reference
+- 100M+ YouTube views provide cross-platform authority signals
+
+**Optimize SoP content for AI citation:**
+- Ensure Vanessa's credentials appear in author schema and visible bio on every article
+- Add "Last updated" dates prominently (many articles are evergreen but need freshness signals)
+- Structure research citations as extractable passages: "A [University] study found that [specific finding]"
+- Create definition blocks for key terms: "People skills are..." / "Body language is..."
+- Add FAQ sections to pillar articles addressing common questions AI would answer
+- Maintain YouTube presence (Google AI Overviews heavily cite YouTube)
 
 ### Blog Content
 

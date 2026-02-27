@@ -9,6 +9,21 @@ metadata:
 
 You are an expert in form optimization. Your goal is to maximize form completion rates while capturing the data that matters.
 
+## Science of People Form Architecture
+
+All SoP forms use `Form.astro` — a single canonical component with these variants:
+- **default** — Standard form with name + email
+- **compact** — Smaller inline form (used for mid-content opt-ins in blog posts)
+- **banner** — Full-width banner form (newsletter CTAs)
+- **squeeze** — Full squeeze page form with progressive phone capture
+- **hero** — Hero section form
+
+**Progressive profiling**: Squeeze page forms collect name + email first, then progressively ask for phone. This is already built into `Form.astro`.
+
+**Lead magnet registry**: Each form's behavior is configured in `src/lib/lead-magnets.ts` with `campaignId` (Customer.io segment), `deliveryMethod` (email, redirect, or inline), tags, and type.
+
+**Important**: SoP is a static Astro site. Recommendations involving client-side JS for form manipulation need to be framed as Astro component changes, not raw JS DOM manipulation.
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -17,13 +32,13 @@ If `.claude/product-marketing-context.md` exists, read it before asking question
 Before providing recommendations, identify:
 
 1. **Form Type**
-   - Lead capture (gated content, newsletter)
+   - Squeeze page form (free training opt-in)
+   - Content upgrade form (blog post lead magnet)
+   - Newsletter signup (inline or banner)
+   - Mid-content opt-in (auto-injected compact form)
    - Contact form
-   - Demo/sales request
-   - Application form
+   - Application form (People Coach, etc.)
    - Survey/feedback
-   - Checkout form
-   - Quote request
 
 2. **Current State**
    - How many fields?
@@ -257,23 +272,26 @@ Examples:
 - Set response time expectations
 - Offer alternatives (chat, phone)
 
-### Demo Request
-- Name, Email, Company required
-- Phone: Optional with "preferred contact" choice
-- Use case/goal question helps personalize
-- Calendar embed can increase show rate
+### Squeeze Page Form (Free Training)
+- Name + Email required, phone progressive (ask after initial submit)
+- Hero image of Vanessa or resource builds trust
+- CTA: First-person, benefit-oriented ("YES! Send my free training")
+- Social proof near form: "Join 4M+ students" / 4.9 rating
+- Keep form above the fold on desktop; ensure it's reachable without excessive scrolling on mobile
+- Form variant: `squeeze`
 
-### Quote/Estimate Request
-- Multi-step often works well
-- Start with easy questions
-- Technical details later
-- Save progress for complex forms
+### Mid-Content Blog Form
+- Auto-injected at ~50% of article by H2 count (compact variant)
+- Inherits the post's `leadMagnetId` (defaults to newsletter)
+- Only shows on posts with 3+ H2 headings
+- Minimal friction: email-only or email + name
+- Contextual headline matching the article topic performs better than generic
 
-### Survey Forms
-- Progress bar essential
-- One question per screen for engagement
-- Skip logic for relevance
-- Consider incentive for completion
+### Newsletter Signup
+- Often banner variant across site
+- Single field (email) or email + name
+- Clear value prop: "Join 800K+ readers getting weekly science-backed people skills"
+- "No spam, unsubscribe anytime" trust text
 
 ---
 

@@ -9,6 +9,24 @@ metadata:
 
 You are an expert in optimizing signup and registration flows. Your goal is to reduce friction, increase completion rates, and set users up for successful activation.
 
+## Science of People Signup Context
+
+SoP has two distinct signup flows:
+
+### 1. Email Opt-In (Primary — Top of Funnel)
+- **Where**: Squeeze pages (13 free trainings), mid-content blog forms, newsletter signups, sticky bars
+- **Tool**: `Form.astro` component with variants (default, compact, banner, squeeze, hero)
+- **Fields**: Name + email (with progressive phone capture on squeeze pages)
+- **Post-submit**: Depends on lead magnet `deliveryMethod` — either redirect to training page, inline success message, or email delivery via Customer.io
+- **Goal**: Grow the 800K+ email list → nurture to People School
+
+### 2. Circle.so Community (Post-Purchase)
+- **Where**: After People School purchase, students create a Circle.so account to access Labs (coaching calls, community, bonus courses)
+- **Flow**: Purchase confirmation → Circle.so invite → account creation → community onboarding
+- **Goal**: Get students into the community and attending their first coaching call
+
+For email opt-in form optimization, the **form-cro** skill has more specific Form.astro guidance. This skill focuses on the overall flow from landing → form → post-submit experience, and on the Circle.so onboarding flow.
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -17,11 +35,11 @@ If `.claude/product-marketing-context.md` exists, read it before asking question
 Before providing recommendations, understand:
 
 1. **Flow Type**
-   - Free trial signup
-   - Freemium account creation
-   - Paid account creation
-   - Waitlist/early access signup
-   - B2B vs B2C
+   - Squeeze page email opt-in (free training)
+   - Newsletter signup (inline or banner)
+   - Content upgrade opt-in (blog post lead magnet)
+   - Circle.so community account creation (post-purchase)
+   - Waitlist/early access signup (book launch, People Coach cohort)
 
 2. **Current State**
    - How many steps/screens?
@@ -30,9 +48,9 @@ Before providing recommendations, understand:
    - Where do users drop off?
 
 3. **Business Constraints**
-   - What data is genuinely needed at signup?
-   - Are there compliance requirements?
+   - What data is genuinely needed at this stage?
    - What happens immediately after signup?
+   - Which Customer.io campaign/segment does this flow into?
 
 ---
 
@@ -240,25 +258,33 @@ Organized by:
 
 ## Common Signup Flow Patterns
 
-### B2B SaaS Trial
-1. Email + Password (or Google auth)
-2. Name + Company (optional: role)
-3. → Onboarding flow
+### Squeeze Page Opt-In (SoP Primary)
+1. Name + Email on squeeze page (Form.astro `squeeze` variant)
+2. Progressive phone capture (shown after initial submit)
+3. → Redirect to training video page OR inline success + email delivery
+4. → Enter Customer.io campaign segment for lead magnet delivery sequence
 
-### B2C App
-1. Google/Apple auth OR Email
-2. → Product experience
-3. Profile completion later
+### Newsletter Signup (SoP)
+1. Email only (Form.astro `banner` or `compact` variant)
+2. → Inline success message ("Check your inbox!")
+3. → Enter Customer.io `newsletter` segment
+
+### Content Upgrade (SoP Blog)
+1. Email (Form.astro `compact` variant, mid-content or end-of-post)
+2. → Email delivery of PDF/resource via Customer.io
+3. → Enter nurture sequence
+
+### Circle.so Community (SoP Post-Purchase)
+1. People School purchase confirmation
+2. Circle.so invite email with unique link
+3. Account creation (name, email, password/social auth)
+4. Profile setup (photo, bio, what you hope to learn)
+5. → Welcome thread, first coaching call invite
 
 ### Waitlist/Early Access
-1. Email only
-2. Optional: Role/use case question
-3. → Waitlist confirmation
-
-### E-commerce Account
-1. Guest checkout as default
-2. Account creation optional post-purchase
-3. OR Social auth with single click
+1. Email only (+ optional name)
+2. → Waitlist confirmation page
+3. → Customer.io waitlist segment (e.g., `conversation-announcement`, `people-coach-waitlist`)
 
 ---
 

@@ -9,6 +9,18 @@ metadata:
 
 You are an expert social media strategist. Your goal is to help create engaging content that builds audience, drives engagement, and supports business goals.
 
+## Science of People Social Context
+
+SoP has a massive social presence to leverage:
+- **YouTube**: 1.19M subscribers, 100M+ cumulative views
+- **Instagram**: 1.08M followers
+- **TikTok**: 707K followers
+- **Facebook**: 1M followers
+- **LinkedIn**: 148K followers
+- **X/Twitter**: 47K followers
+
+Vanessa Van Edwards is the primary voice. Social content should match her brand voice: warm, science-backed, personal, and action-oriented. SoP has 963+ blog posts and hundreds of YouTube videos to repurpose into social content. The goal is to drive traffic back to the site for email opt-ins (squeeze pages or newsletter).
+
 ## Before Creating Content
 
 **Check for product marketing context first:**
@@ -55,6 +67,16 @@ Gather this context (ask if not provided):
 ## Content Pillars Framework
 
 Build your content around 3-5 pillars that align with your expertise and audience interests.
+
+### Example for Science of People
+
+| Pillar | % of Content | Topics |
+|--------|--------------|--------|
+| Science-backed tips | 35% | Body language cues, conversation starters, charisma techniques, research findings |
+| Personal stories | 25% | Vanessa's "recovering awkward person" moments, behind-the-scenes, real interactions |
+| Educational deep dives | 20% | Frameworks from Captivate/Cues, Action Steps, how-to breakdowns |
+| Community & social proof | 15% | Student transformations, People School wins, audience Q&A |
+| Promotional | 5% | Free training offers, People School open enrollment, book launches |
 
 ### Example for a SaaS Founder
 

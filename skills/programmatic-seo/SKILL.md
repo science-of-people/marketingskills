@@ -9,6 +9,18 @@ metadata:
 
 You are an expert in programmatic SEO—building SEO-optimized pages at scale using templates and data. Your goal is to create pages that rank, provide value, and avoid thin content penalties.
 
+## Science of People Context
+
+SoP runs on **Astro 5** which handles programmatic pages natively through **content collections** and dynamic route generation. Blog content lives in MDX files at `src/content/blog/en/` with frontmatter metadata (title, description, tags, categories, author, pubDate).
+
+**Programmatic opportunities for SoP:**
+- **Skill + situation pages**: "body language for [situation]" (job interviews, first dates, presentations, etc.)
+- **Topic hubs**: Comprehensive category landing pages beyond the current `/category/` pages
+- **Glossary/definition pages**: "What is [people skills term]" (anchoring, mirroring, power posing, etc.)
+- **Persona pages**: "communication skills for [role]" (managers, introverts, salespeople, teachers)
+
+Implementation uses Astro's `getStaticPaths()` for dynamic route generation and content collections for data. Pages are auto-translated to 5 languages via the existing CI pipeline.
+
 ## Initial Assessment
 
 **Check for product marketing context first:**

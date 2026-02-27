@@ -9,6 +9,22 @@ metadata:
 
 You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward conversion.
 
+## Science of People Email Context
+
+SoP uses **Customer.io** for all email automation. Key architecture:
+- Each lead magnet in the website code has a `campaignId` (defined in `src/lib/lead-magnets.ts`)
+- That `campaignId` maps to a **segment** in Customer.io
+- Campaigns trigger when people enter those segments
+
+**Primary email sequences at SoP:**
+1. **Lead magnet delivery** — Deliver free training video after squeeze page opt-in (13 different sequences)
+2. **Newsletter** — Weekly "Communicate with Confidence" to 800K+ subscribers
+3. **Nurture to People School** — Bridge from free training to $2,495 course enrollment
+4. **Course student sequences** — Post-purchase onboarding, module delivery, coaching reminders
+5. **Re-engagement** — Win back cold subscribers
+
+When creating sequences, always specify the **Customer.io campaignId** that should trigger the sequence and which segment it maps to.
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -149,19 +165,32 @@ Key emails:
 3. Incentive (special offer)
 4. Last chance (stay or unsubscribe)
 
-### Onboarding Sequence (Product Users)
-**Length**: 5-7 emails over 14 days
-**Goal**: Activate, drive to aha moment, upgrade
-**Note**: Coordinate with in-app onboarding—email supports, doesn't duplicate
+### Lead Magnet Delivery Sequence
+**Length**: 5-7 emails over 10-14 days
+**Goal**: Deliver free training, build trust, bridge to People School
+**Trigger**: Squeeze page opt-in (campaignId from lead magnet registry)
 
 Key emails:
-1. Welcome + first step (immediate)
-2. Getting started help (day 1)
-3. Feature highlight (day 2-3)
-4. Success story (day 4-5)
-5. Check-in (day 7)
-6. Advanced tip (day 10-12)
-7. Upgrade/expand (day 14+)
+1. Deliver training + welcome (immediate) — "Your free training is ready"
+2. Key takeaway follow-up (day 1-2) — Expand on the training's most impactful lesson
+3. Vanessa's story (day 3-4) — Personal connection, "recovering awkward person" angle
+4. Science spotlight (day 5-6) — Share a fascinating study related to the training topic
+5. Student success story (day 7-8) — Social proof from someone who used these skills
+6. People School introduction (day 10-12) — Bridge: "Want to go deeper?"
+7. Direct offer (day 13-14) — People School CTA with objection handling
+
+### Course Student Sequence (Post-Purchase)
+**Length**: 12+ emails over course duration
+**Goal**: Drive completion, celebrate wins, encourage coaching participation
+
+Key emails:
+1. Welcome + getting started (immediate) — Login, community access, first module
+2. Module 1 reminder (day 2) — Nudge to start if they haven't
+3. Quick win celebration (day 5-7) — Ask about first Action Step they tried
+4. Community intro (day 7-10) — Encourage Labs participation, accountability calls
+5. Mid-course check-in (week 3-4) — Progress encouragement, highlight advanced modules
+6. Coaching reminder (ongoing) — Weekly Labs workshop notifications
+7. Completion celebration — Certificate, next steps, People Coach teaser
 
 **For detailed templates**: See [references/sequence-templates.md](references/sequence-templates.md)
 
@@ -175,29 +204,22 @@ Key emails:
 - Key onboarding step reminders
 - New user invites
 
-### Retention Emails
-- Upgrade to paid
-- Upgrade to higher plan
-- Ask for review
-- Proactive support offers
-- Product usage reports
-- NPS survey
-- Referral program
+### Engagement Emails
+- Course progress encouragement
+- Coaching session reminders (Labs)
+- Community highlights and wins
+- Ask for review/testimonial (post-completion)
+- Referral program invitations
 
-### Billing Emails
-- Switch to annual
-- Failed payment recovery
-- Cancellation survey
-- Upcoming renewal reminders
-
-### Usage Emails
-- Daily/weekly/monthly summaries
-- Key event notifications
-- Milestone celebrations
+### Milestone Emails
+- Course module completion celebrations
+- Skill practice milestones ("You've practiced 7 Action Steps!")
+- Anniversary of joining SoP community
 
 ### Win-Back Emails
-- Expired trials
-- Cancelled customers
+- Cold subscribers (30-60 days no opens)
+- Incomplete course students (stalled mid-way)
+- Previous leads who didn't purchase
 
 ### Campaign Emails
 - Monthly roundup / newsletter
@@ -301,8 +323,7 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md). Key email
 
 ## Related Skills
 
-- **churn-prevention**: For cancel flows, save offers, and dunning strategy (email supports this)
-- **onboarding-cro**: For in-app onboarding (email supports this)
-- **copywriting**: For landing pages emails link to
+- **copywriting**: For landing pages and squeeze pages that emails link to
 - **ab-test-setup**: For testing email elements
 - **popup-cro**: For email capture popups
+- **content-strategy**: For planning content that feeds email sequences

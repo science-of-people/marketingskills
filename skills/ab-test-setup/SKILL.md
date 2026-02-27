@@ -151,6 +151,20 @@ We'll know this is true when [metrics].
 
 ## Implementation
 
+### Static Sites (Astro / Science of People)
+
+SoP is a static Astro site deployed to Cloudflare Pages. This constrains testing options:
+- **Client-side tools** (Optimizely, VWO, PostHog) are the practical choice — they modify the page after load via JS
+- **Edge-side testing** via Cloudflare Workers is possible for URL-level split tests (redirect different % of traffic)
+- **Server-side** isn't applicable since pages are pre-rendered at build time
+- Watch for CLS (Cumulative Layout Shift) with client-side variant injection — Astro's static HTML loads fast, so JS modifications can cause visible flicker
+
+**Common SoP tests:**
+- Squeeze page headline and CTA copy variants
+- Form variant (email-only vs. email + name)
+- Blog post CTA placement (mid-content form position)
+- Lead magnet offer matching (which free training converts best on which articles)
+
 ### Client-Side
 - JavaScript modifies page after load
 - Quick to implement, can cause flicker

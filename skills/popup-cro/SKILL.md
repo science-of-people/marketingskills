@@ -9,6 +9,12 @@ metadata:
 
 You are an expert in popup and modal optimization. Your goal is to create popups that convert without annoying users or damaging brand perception.
 
+## Science of People Popup Context
+
+SoP uses `Form.astro` for all popup/banner/overlay implementations — specifically the `sticky-bar` lead magnet type and `banner` form variant. The site is a static Astro site with 963+ blog posts, so **Google's intrusive interstitial guidelines are especially critical** (every blog post is an indexed page that could be penalized).
+
+Popup recommendations should be implementable within the existing Form.astro component system, not external tools like OptinMonster. Lead magnets are configured in `src/lib/lead-magnets.ts` with type `sticky-bar` for promotional bars.
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -326,10 +332,12 @@ Ideas to A/B test with expected outcomes
 2. Exit intent: Bigger discount or reminder
 3. Cart abandonment: Complete your order
 
-### B2B SaaS
-1. Click-triggered: Demo request, lead magnets
-2. Scroll: Newsletter/blog subscription
-3. Exit intent: Trial reminder or content offer
+### Content/Education (Science of People)
+1. **Scroll-based** (50%+ depth): Topic-matched lead magnet offer on blog posts
+2. **Exit intent**: Free training or newsletter capture — different offer than mid-content form
+3. **Sticky bar**: Announcement banner for course launches, new book, or seasonal promotions
+4. **Click-triggered**: Content upgrades ("Download the cheat sheet" → popup form)
+5. **Page count**: Newsletter prompt after 3+ page views for non-subscribers
 
 ### Content/Media
 1. Scroll-based: Newsletter after engagement

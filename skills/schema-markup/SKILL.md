@@ -56,7 +56,7 @@ Before implementing schema, understand:
 | WebSite | Homepage (search box) | name, url |
 | Article | Blog posts, news | headline, image, datePublished, author |
 | Product | Product pages | name, image, offers |
-| SoftwareApplication | SaaS/app pages | name, offers |
+| Course | Course/training pages | name, provider, description |
 | FAQPage | FAQ content | mainEntity (Q&A array) |
 | HowTo | Tutorials | name, step |
 | BreadcrumbList | Any page with breadcrumbs | itemListElement |
@@ -125,7 +125,20 @@ You can combine multiple schema types on one page using `@graph`:
 
 ## Implementation
 
-### Static Sites
+### Astro Static Sites (Science of People)
+
+SoP runs on Astro 5 with MDX content. Schema implementation:
+- **JSON-LD in `<head>`** via Astro layout components (e.g., `BaseLayout.astro`, `BlogLayout.astro`)
+- **Article/BlogPosting schema** for 963+ blog posts — populate from MDX frontmatter (title, pubDate, author, image, description)
+- **Course schema** for People School and People Coach pages
+- **Person schema** for Vanessa Van Edwards (author pages)
+- **Organization schema** on homepage/about
+- **FAQ schema** can be added to individual posts via MDX components
+- **BreadcrumbList** for navigation hierarchy
+
+Since Astro renders at build time, JSON-LD is embedded in static HTML — no client-side JS injection issues.
+
+### Other Static Sites
 - Add JSON-LD directly in HTML template
 - Use includes/partials for reusable schema
 
@@ -133,11 +146,6 @@ You can combine multiple schema types on one page using `@graph`:
 - Component that renders schema
 - Server-side rendered for SEO
 - Serialize data to JSON-LD
-
-### CMS / WordPress
-- Plugins (Yoast, Rank Math, Schema Pro)
-- Theme modifications
-- Custom fields to structured data
 
 ---
 

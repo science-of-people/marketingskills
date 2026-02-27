@@ -59,7 +59,17 @@ Edit copy through seven sequential passes, each focusing on one dimension. After
 
 **Focus:** Is the copy consistent in how it sounds?
 
-**What to check:**
+**For Science of People content, check against these voice rules:**
+- Lead with empathy, then science (acknowledge feelings before citing research)
+- Action Steps present and specific (not vague advice)
+- Research cited accessibly ("A Stanford study found..." not "Smith et al., 2019")
+- Normalizing language used ("Like many people..." / "You're not alone")
+- Problems reframed as solvable ("It's not you, it's your cues!")
+- Warm and collegial tone, not professorial or corporate
+- No exclamation point overuse
+- Words to avoid: "soft skills," "hacks," "tricks," "manipulation," "self-help"
+
+**General voice checks:**
 - Shifts between formal and casual
 - Inconsistent brand personality
 - Mood changes that feel jarring

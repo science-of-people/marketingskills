@@ -7,7 +7,29 @@ metadata:
 
 # Churn Prevention
 
-You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention, and dunning strategies.
+You are an expert in retention and churn prevention. Your goal is to help reduce churn across all stages of the customer lifecycle through proactive engagement, re-engagement campaigns, and retention strategies.
+
+## Science of People Churn Context
+
+SoP has three distinct churn surfaces, each requiring different strategies:
+
+### 1. Email List Churn (800K+ subscribers)
+- **What it looks like**: Subscribers go cold (stop opening emails), unsubscribe, or never engage after initial opt-in
+- **Why it matters**: The email list is the primary bridge from free content to People School ($2,495). Cold subscribers = lost pipeline.
+- **Key signals**: Open rate decline, no clicks for 30+ days, unsubscribe after lead magnet delivery
+- **Tools**: Customer.io segments and campaigns, engagement scoring
+
+### 2. People School Non-Completion
+- **What it looks like**: Students buy the course but don't finish modules, stop attending Labs coaching calls, or disengage from the Circle.so community
+- **Why it matters**: Non-completers don't get results → no testimonials, no referrals, no People Coach pipeline
+- **Key signals**: Module progress stalls, no Circle.so activity, missed coaching calls, no Action Step submissions
+- **Tools**: Circle.so activity data, course platform progress tracking, Customer.io
+
+### 3. Labs Membership Lapse
+- **What it looks like**: People School students' 6-month Labs access expires and they don't renew or re-engage
+- **Why it matters**: Labs is the ongoing relationship and upsell path to People Coach Certification
+- **Key signals**: Coaching call attendance drops, community participation declines, approaching expiry date
+- **Tools**: Billing/access management, Customer.io renewal sequences
 
 ## Before Starting
 
@@ -17,336 +39,214 @@ If `.claude/product-marketing-context.md` exists, read it before asking question
 Gather this context (ask if not provided):
 
 ### 1. Current Churn Situation
-- What's your monthly churn rate? (Voluntary vs. involuntary if known)
-- How many active subscribers?
-- What's the average MRR per customer?
-- Do you have a cancel flow today, or does cancel happen instantly?
+- Which churn surface are you focused on? (Email list, course completion, Labs renewal)
+- What are the current engagement metrics? (Open rates, completion rates, renewal rates)
+- Do you have data on when/why people disengage?
 
-### 2. Billing & Platform
-- What billing provider? (Stripe, Chargebee, Paddle, Recurly, Braintree)
-- Monthly, annual, or both billing intervals?
-- Do you support plan pausing or downgrades?
-- Any existing retention tooling? (Churnkey, ProsperStack, Raaft)
+### 2. Engagement Data
+- Can you identify engagement drop-offs? (Customer.io, Circle.so, course platform)
+- Do you have segmentation by engagement level?
+- What does an "engaged" subscriber/student look like vs. a "churning" one?
 
-### 3. Product & Usage Data
-- Do you track feature usage per user?
-- Can you identify engagement drop-offs?
-- Do you have cancellation reason data from past churns?
-- What's your activation metric? (What do retained users do that churned users don't?)
-
-### 4. Constraints
-- B2B or B2C? (Affects flow design)
-- Self-serve cancellation required? (Some regulations mandate easy cancel)
-- Brand tone for offboarding? (Empathetic, direct, playful)
+### 3. Existing Retention Efforts
+- What re-engagement sequences exist in Customer.io?
+- Are there automated nudges for stalled students?
+- What happens when Labs access is about to expire?
 
 ---
 
 ## How This Skill Works
 
-Churn has two types requiring different strategies:
+SoP churn has three types requiring different strategies:
 
 | Type | Cause | Solution |
 |------|-------|----------|
-| **Voluntary** | Customer chooses to cancel | Cancel flows, save offers, exit surveys |
-| **Involuntary** | Payment fails | Dunning emails, smart retries, card updaters |
-
-Voluntary churn is typically 50-70% of total churn. Involuntary churn is 30-50% but is often easier to fix.
+| **Email list cold** | Subscriber disengages after opt-in | Re-engagement sequences, segmentation, list hygiene |
+| **Course non-completion** | Student stalls mid-course | Progress nudges, coaching reminders, community engagement, accountability |
+| **Labs lapse** | 6-month access expires without renewal | Renewal sequences, value recaps, expiry countdown, win-back |
 
 This skill supports three modes:
 
-1. **Build a cancel flow** — Design from scratch with survey, save offers, and confirmation
-2. **Optimize an existing flow** — Analyze cancel data and improve save rates
-3. **Set up dunning** — Failed payment recovery with retries and email sequences
+1. **Email re-engagement** — Win back cold subscribers before they unsubscribe
+2. **Course completion optimization** — Keep People School students progressing through modules and attending coaching
+3. **Labs renewal** — Retain expiring Labs members with value-based renewal campaigns
 
 ---
 
-## Cancel Flow Design
+## Email List Re-Engagement
 
-### The Cancel Flow Structure
-
-Every cancel flow follows this sequence:
+### The Re-Engagement Flow
 
 ```
-Trigger → Survey → Dynamic Offer → Confirmation → Post-Cancel
+Cold detection → Segmentation → Re-engagement sequence → Re-activated or Sunset
 ```
 
-**Step 1: Trigger**
-Customer clicks "Cancel subscription" in account settings.
+**Step 1: Cold Detection**
+Identify subscribers who haven't opened or clicked in 30-60 days. Use Customer.io engagement scoring.
 
-**Step 2: Exit Survey**
-Ask why they're cancelling. This determines which save offer to show.
+**Step 2: Segmentation**
+Segment cold subscribers by their original lead magnet (tells you their interest area) and how long they've been cold.
 
-**Step 3: Dynamic Save Offer**
-Present a targeted offer based on their reason (discount, pause, downgrade, etc.)
+**Step 3: Re-Engagement Sequence**
+Send a targeted 3-4 email sequence designed to re-activate:
+1. "We miss you" + high-value content related to their original opt-in topic
+2. A new/different free resource ("Have you seen this?")
+3. Vanessa personal story or fresh research finding (emotional hook)
+4. "Stay or go?" — honest email letting them choose to stay or unsubscribe
 
-**Step 4: Confirmation**
-If they still want to cancel, confirm clearly with end-of-billing-period messaging.
+**Step 4: Outcome**
+- Re-engaged: Move back to active newsletter segment
+- No response: Sunset (reduce send frequency or remove to protect deliverability)
 
-**Step 5: Post-Cancel**
-Set expectations, offer easy reactivation path, trigger win-back sequence.
+## People School Completion Optimization
 
-### Exit Survey Design
+### Why Students Stall
 
-The exit survey is the foundation. Good reason categories:
+| Reason | Signal | Intervention |
+|--------|--------|-------------|
+| Overwhelmed by 12 modules | Low progress after week 2 | "Just do Module 1 this week" — simplify the path |
+| Life got busy | No login or Circle.so activity for 7+ days | Gentle check-in email with Vanessa's voice |
+| Not seeing results yet | Completed modules but low coaching attendance | "Try this one Action Step today" — make it concrete |
+| Imposter syndrome | Browsing but not participating in community | Normalize struggle: "Most students feel this at Module 3" |
+| Forgot about it | No activity for 14+ days | Re-engagement with a specific win from another student |
 
-| Reason | What It Tells You |
-|--------|-------------------|
-| Too expensive | Price sensitivity, may respond to discount or downgrade |
-| Not using it enough | Low engagement, may respond to pause or onboarding help |
-| Missing a feature | Product gap, show roadmap or workaround |
-| Switching to competitor | Competitive pressure, understand what they offer |
-| Technical issues / bugs | Product quality, escalate to support |
-| Temporary / seasonal need | Usage pattern, offer pause |
-| Business closed / changed | Unavoidable, learn and let go gracefully |
-| Other | Catch-all, include free text field |
-
-**Survey best practices:**
-- 1 question, single-select with optional free text
-- 5-8 reason options max (avoid decision fatigue)
-- Put most common reasons first (review data quarterly)
-- Don't make it feel like a guilt trip
-- "Help us improve" framing works better than "Why are you leaving?"
-
-### Dynamic Save Offers
-
-The key insight: **match the offer to the reason.** A discount won't save someone who isn't using the product. A feature roadmap won't save someone who can't afford it.
-
-**Offer-to-reason mapping:**
-
-| Cancel Reason | Primary Offer | Fallback Offer |
-|---------------|---------------|----------------|
-| Too expensive | Discount (20-30% for 2-3 months) | Downgrade to lower plan |
-| Not using it enough | Pause (1-3 months) | Free onboarding session |
-| Missing feature | Roadmap preview + timeline | Workaround guide |
-| Switching to competitor | Competitive comparison + discount | Feedback session |
-| Technical issues | Escalate to support immediately | Credit + priority fix |
-| Temporary / seasonal | Pause subscription | Downgrade temporarily |
-| Business closed | Skip offer (respect the situation) | — |
-
-### Save Offer Types
-
-**Discount**
-- 20-30% off for 2-3 months is the sweet spot
-- Avoid 50%+ discounts (trains customers to cancel for deals)
-- Time-limit the offer ("This offer expires when you leave this page")
-- Show the dollar amount saved, not just the percentage
-
-**Pause subscription**
-- 1-3 month pause maximum (longer pauses rarely reactivate)
-- 60-80% of pausers eventually return to active
-- Auto-reactivation with advance notice email
-- Keep their data and settings intact
-
-**Plan downgrade**
-- Offer a lower tier instead of full cancellation
-- Show what they keep vs. what they lose
-- Position as "right-size your plan" not "downgrade"
-- Easy path back up when ready
-
-**Feature unlock / extension**
-- Unlock a premium feature they haven't tried
-- Extend trial of a higher tier
-- Works best for "not getting enough value" reasons
-
-**Personal outreach**
-- For high-value accounts (top 10-20% by MRR)
-- Route to customer success for a call
-- Personal email from founder for smaller companies
-
-### Cancel Flow UI Patterns
+### Course Completion Nudge Sequence
 
 ```
-┌─────────────────────────────────────┐
-│  We're sorry to see you go          │
-│                                     │
-│  What's the main reason you're      │
-│  cancelling?                        │
-│                                     │
-│  ○ Too expensive                    │
-│  ○ Not using it enough              │
-│  ○ Missing a feature I need         │
-│  ○ Switching to another tool        │
-│  ○ Technical issues                 │
-│  ○ Temporary / don't need right now │
-│  ○ Other: [____________]            │
-│                                     │
-│  [Continue]                         │
-│  [Never mind, keep my subscription] │
-└─────────────────────────────────────┘
-         ↓ (selects "Too expensive")
-┌─────────────────────────────────────┐
-│  What if we could help?             │
-│                                     │
-│  We'd love to keep you. Here's a    │
-│  special offer:                     │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │  25% off for the next 3 months│  │
-│  │  Save $XX/month               │  │
-│  │                               │  │
-│  │  [Accept Offer]               │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  Or switch to [Basic Plan] at       │
-│  $X/month →                         │
-│                                     │
-│  [No thanks, continue cancelling]   │
-└─────────────────────────────────────┘
+Progress stall detected → Personalized nudge → Action Step challenge → Community hook → Coaching invite
 ```
 
-**UI principles:**
-- Keep the "continue cancelling" option visible (no dark patterns)
-- One primary offer + one fallback, not a wall of options
-- Show specific dollar savings, not abstract percentages
-- Use the customer's name and account data when possible
-- Mobile-friendly (many cancellations happen on mobile)
+1. **Day 0 (stall detected)**: "Hey [Name], you left off at [Module]. Here's a 5-minute Action Step you can try today." (Customer.io triggered)
+2. **Day 3**: Share a student success story relevant to their current module
+3. **Day 7**: Vanessa personal note — "I know this module can feel [emotion]. Here's what I want you to know..."
+4. **Day 10**: Community hook — "Your study group shared [insight]. Join the conversation in Circle."
+5. **Day 14**: Coaching invite — "This week's live session covers exactly what you're working on. Here's the link."
 
-For detailed cancel flow patterns by industry and billing provider, see [references/cancel-flow-patterns.md](references/cancel-flow-patterns.md).
+### Celebrate Progress
+
+- Module completion emails with specific praise
+- "You've completed 50% of People School!" milestones
+- Encourage students to share wins in Circle.so
+- Highlight Action Step successes ("You tried the Charisma Formula — how did it go?")
+
+## Labs Renewal Strategy
+
+### Pre-Expiry Sequence (Start 30 Days Before)
+
+| Timing | Email | Focus |
+|--------|-------|-------|
+| 30 days out | Value recap | "Here's what you've accomplished in Labs" — specific metrics, calls attended, community posts |
+| 21 days out | Upcoming sessions | "Here's what's coming next month" — create FOMO for future coaching |
+| 14 days out | Student spotlight | Success story from a student who renewed and saw continued growth |
+| 7 days out | Vanessa personal | "I'd love to keep working with you. Here's why Labs matters for what's next." |
+| 3 days out | Expiry reminder | Clear deadline + renewal link + what they'll lose access to |
+| Day of expiry | Final chance | "Your Labs access expires today." |
+
+### Post-Expiry Win-Back (If They Lapse)
+
+1. **Day 1**: "Your Labs access has ended. Here's how to come back anytime."
+2. **Day 7**: Share something valuable from that week's coaching call they missed
+3. **Day 30**: New feature or event announcement in Labs — "Here's what's new"
+4. **Day 60**: People Coach Certification teaser — "Ready for the next level?"
+
+### Retention Levers for Labs
+- Show participation stats (calls attended, community posts, connections made)
+- Exclusive content only available to Labs members
+- Early access to new courses or features
+- People Coach Certification pathway (Labs → Coach is a natural progression)
 
 ---
 
 ## Churn Prediction & Proactive Retention
 
-The best save happens before the customer ever clicks "Cancel."
+The best save happens before the subscriber or student disengages.
 
-### Risk Signals
+### Risk Signals by Churn Type
 
-Track these leading indicators of churn:
+**Email subscriber risk signals:**
 
 | Signal | Risk Level | Timeframe |
 |--------|-----------|-----------|
-| Login frequency drops 50%+ | High | 2-4 weeks before cancel |
-| Key feature usage stops | High | 1-3 weeks before cancel |
-| Support tickets spike then stop | High | 1-2 weeks before cancel |
-| Email open rates decline | Medium | 2-6 weeks before cancel |
-| Billing page visits increase | High | Days before cancel |
-| Team seats removed | High | 1-2 weeks before cancel |
-| Data export initiated | Critical | Days before cancel |
-| NPS score drops below 6 | Medium | 1-3 months before cancel |
+| Email open rate drops below 10% | Medium | 2-4 weeks before unsubscribe |
+| No clicks for 30+ days | High | Active disengagement |
+| Lead magnet downloaded but no further engagement | Medium | First 7 days post-opt-in |
+| Unsubscribe from specific campaign but still on list | Low-Medium | Watch for pattern |
 
-### Health Score Model
+**People School student risk signals:**
 
-Build a simple health score (0-100) from weighted signals:
+| Signal | Risk Level | Timeframe |
+|--------|-----------|-----------|
+| No module progress for 7+ days | Medium | Early warning |
+| No Circle.so login for 14+ days | High | Active disengagement |
+| Coaching call attendance drops | High | 2-3 weeks before full stall |
+| No Action Step practice reported | Medium | Missing the core methodology |
+| Community posts stop | Medium | Social withdrawal |
 
-```
-Health Score = (
-  Login frequency score × 0.30 +
-  Feature usage score   × 0.25 +
-  Support sentiment     × 0.15 +
-  Billing health        × 0.15 +
-  Engagement score      × 0.15
-)
-```
+**Labs member risk signals:**
 
-| Score | Status | Action |
-|-------|--------|--------|
-| 80-100 | Healthy | Upsell opportunities |
-| 60-79 | Needs attention | Proactive check-in |
-| 40-59 | At risk | Intervention campaign |
-| 0-39 | Critical | Personal outreach |
+| Signal | Risk Level | Timeframe |
+|--------|-----------|-----------|
+| Coaching call attendance drops to 0 | High | 4-6 weeks before lapse |
+| No Circle.so activity for 30+ days | High | Active disengagement |
+| Approaching 6-month expiry with low engagement | Critical | 30 days before expiry |
 
 ### Proactive Interventions
 
-**Before they think about cancelling:**
-
 | Trigger | Intervention |
 |---------|-------------|
-| Usage drop >50% for 2 weeks | "We noticed you haven't used [feature]. Need help?" email |
-| Approaching plan limit | Upgrade nudge (not a wall — paywall-upgrade-cro handles this) |
-| No login for 14 days | Re-engagement email with recent product updates |
-| NPS detractor (0-6) | Personal follow-up within 24 hours |
-| Support ticket unresolved >48h | Escalation + proactive status update |
-| Annual renewal in 30 days | Value recap email + renewal confirmation |
+| New subscriber no engagement after 7 days | "Did you watch your free training?" follow-up |
+| Newsletter subscriber cold for 30 days | Re-engagement sequence (see above) |
+| Student stalls mid-module | Personalized "try this one Action Step" nudge |
+| Student hasn't joined Circle.so | "Your community is waiting" invite with specific conversation to join |
+| Labs member attendance dropping | Personal email: "We'd love to see you at [specific upcoming session]" |
+| Labs expiry in 30 days | Renewal sequence with value recap |
 
 ---
 
-## Involuntary Churn: Payment Recovery
+## Email List Health & Deliverability
 
-Failed payments cause 30-50% of all churn but are the most recoverable.
+Maintaining list health is critical for SoP's 800K+ subscriber base.
 
-### The Dunning Stack
+### List Hygiene Strategy
 
-```
-Pre-dunning → Smart retry → Dunning emails → Grace period → Hard cancel
-```
+- **Sunset policy**: Subscribers with no opens for 90+ days should be moved to a lower-frequency segment or removed
+- **Re-engagement before removal**: Always run a re-engagement sequence before sunsetting (see Email List Re-Engagement above)
+- **Deliverability protection**: Cold subscribers hurt sender reputation → lower inbox placement for everyone
+- **Segment by engagement**: Hot (opened last 30 days), Warm (30-60 days), Cold (60-90 days), Sunset (90+ days)
 
-### Pre-Dunning (Prevent Failures)
+### Benchmarks for SoP
 
-- **Card expiry alerts**: Email 30, 15, and 7 days before card expires
-- **Backup payment method**: Prompt for a second payment method at signup
-- **Card updater services**: Visa/Mastercard auto-update programs (reduces hard declines 30-50%)
-- **Pre-billing notification**: Email 3-5 days before charge for annual plans
-
-### Smart Retry Logic
-
-Not all failures are the same. Retry strategy by decline type:
-
-| Decline Type | Examples | Retry Strategy |
-|-------------|----------|----------------|
-| Soft decline (temporary) | Insufficient funds, processor timeout | Retry 3-5 times over 7-10 days |
-| Hard decline (permanent) | Card stolen, account closed | Don't retry — ask for new card |
-| Authentication required | 3D Secure, SCA | Send customer to update payment |
-
-**Retry timing best practices:**
-- Retry 1: 24 hours after failure
-- Retry 2: 3 days after failure
-- Retry 3: 5 days after failure
-- Retry 4: 7 days after failure (with dunning email escalation)
-- After 4 retries: Hard cancel with reactivation path
-
-**Smart retry tip:** Retry on the day of the month the payment originally succeeded (if Day 1 worked before, retry on Day 1). Stripe Smart Retries handles this automatically.
-
-### Dunning Email Sequence
-
-| Email | Timing | Tone | Content |
-|-------|--------|------|---------|
-| 1 | Day 0 (failure) | Friendly alert | "Your payment didn't go through. Update your card." |
-| 2 | Day 3 | Helpful reminder | "Quick reminder — update your payment to keep access." |
-| 3 | Day 7 | Urgency | "Your account will be paused in 3 days. Update now." |
-| 4 | Day 10 | Final warning | "Last chance to keep your account active." |
-
-**Dunning email best practices:**
-- Direct link to payment update page (no login required if possible)
-- Show what they'll lose (their data, their team's access)
-- Don't blame ("your payment failed" not "you failed to pay")
-- Include support contact for help
-- Plain text performs better than designed emails for dunning
-
-### Recovery Benchmarks
-
-| Metric | Poor | Average | Good |
-|--------|------|---------|------|
-| Soft decline recovery | <40% | 50-60% | 70%+ |
-| Hard decline recovery | <10% | 20-30% | 40%+ |
-| Overall payment recovery | <30% | 40-50% | 60%+ |
-| Pre-dunning prevention | None | 10-15% | 20-30% |
-
-For the complete dunning playbook with provider-specific setup, see [references/dunning-playbook.md](references/dunning-playbook.md).
+| Metric | Concerning | Healthy | Excellent |
+|--------|-----------|---------|-----------|
+| Newsletter open rate | <15% | 20-30% | 35%+ |
+| Lead magnet → newsletter retention (30 days) | <40% | 50-65% | 70%+ |
+| Unsubscribe rate per send | >0.5% | 0.1-0.3% | <0.1% |
+| People School student course completion | <30% | 50-65% | 75%+ |
+| Labs renewal rate | <30% | 50-60% | 70%+ |
 
 ---
 
 ## Metrics & Measurement
 
-### Key Churn Metrics
+### Key Retention Metrics
 
-| Metric | Formula | Target |
-|--------|---------|--------|
-| Monthly churn rate | Churned customers / Start-of-month customers | <5% B2C, <2% B2B |
-| Revenue churn (net) | (Lost MRR - Expansion MRR) / Start MRR | Negative (net expansion) |
-| Cancel flow save rate | Saved / Total cancel sessions | 25-35% |
-| Offer acceptance rate | Accepted offers / Shown offers | 15-25% |
-| Pause reactivation rate | Reactivated / Total paused | 60-80% |
-| Dunning recovery rate | Recovered / Total failed payments | 50-60% |
-| Time to cancel | Days from first churn signal to cancel | Track trend |
+| Metric | What It Measures | Target |
+|--------|-----------------|--------|
+| Email list 30-day retention | % of new subscribers still opening after 30 days | 60%+ |
+| Newsletter engagement rate | Opens + clicks / total subscribers | 25%+ |
+| Lead magnet → People School conversion | % of opt-ins who eventually purchase | Track and improve |
+| Course completion rate | % of People School students finishing all 12 modules | 65%+ |
+| Labs coaching attendance | Average calls attended per month per member | 2+ per month |
+| Labs renewal rate | % of expiring members who renew | 60%+ |
+| Circle.so DAU/MAU | Daily vs monthly active users in community | 20%+ |
 
 ### Cohort Analysis
 
-Segment churn by:
-- **Acquisition channel** — Which channels bring stickier customers?
-- **Plan type** — Which plans churn most?
-- **Tenure** — When do most cancellations happen? (30, 60, 90 days?)
-- **Cancel reason** — Which reasons are growing?
-- **Save offer type** — Which offers work best for which segments?
+Segment retention by:
+- **Lead magnet source** — Which free trainings produce the most engaged subscribers?
+- **Opt-in date** — Seasonal patterns in engagement?
+- **People School enrollment date** — When do most students stall? (Week 2? Module 4?)
+- **Engagement tier** — How do hot/warm/cold subscribers behave differently?
 
 ### Cancel Flow A/B Tests
 
@@ -416,9 +316,7 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md).
 
 ## Related Skills
 
-- **email-sequence**: For win-back email sequences after cancellation
-- **paywall-upgrade-cro**: For in-app upgrade moments and trial expiration
-- **pricing-strategy**: For plan structure and annual discount strategy
-- **onboarding-cro**: For activation to prevent early churn
-- **analytics-tracking**: For setting up churn signal events
-- **ab-test-setup**: For testing cancel flow variations with statistical rigor
+- **email-sequence**: For building re-engagement and renewal email sequences in Customer.io
+- **onboarding-cro**: For optimizing the subscriber → People School buyer journey and post-purchase onboarding
+- **analytics-tracking**: For setting up engagement and churn signal events via Cloudflare Zaraz
+- **ab-test-setup**: For testing re-engagement and retention strategies

@@ -9,6 +9,25 @@ metadata:
 
 You are an expert in user onboarding and activation. Your goal is to help users reach their "aha moment" as quickly as possible and establish habits that lead to long-term retention.
 
+## Science of People Onboarding Context
+
+SoP has two onboarding journeys:
+
+### Journey 1: Subscriber → People School Buyer (Activation = Purchase)
+The "aha moment" for email subscribers is **purchasing People School**. Everything between opt-in and purchase is onboarding:
+- Free training delivery → builds trust and demonstrates value
+- Newsletter engagement → weekly touchpoints with science-backed tips
+- Nurture sequences → bridge from free content to paid course
+- **Goal**: Reduce time from email opt-in to People School enrollment
+
+### Journey 2: People School Student → Active Learner (Post-Purchase)
+After purchasing People School ($2,495), students need to be onboarded into:
+- **Circle.so community** — Labs coaching, accountability calls, AI tools, bonus courses
+- **12-module curriculum** — self-paced but with recommended cadence (1-2 modules/week)
+- **Action Step practice** — the core methodology; students need to try techniques IRL
+- **Coaching calls** — live weekly sessions with Vanessa and certified coaches
+- **Goal**: Drive course completion, coaching attendance, and community participation
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -16,9 +35,9 @@ If `.claude/product-marketing-context.md` exists, read it before asking question
 
 Before providing recommendations, understand:
 
-1. **Product Context** - What type of product? B2B or B2C? Core value proposition?
-2. **Activation Definition** - What's the "aha moment"? What action indicates a user "gets it"?
-3. **Current State** - What happens after signup? Where do users drop off?
+1. **Which journey?** — Subscriber-to-buyer activation or post-purchase student onboarding?
+2. **Activation Definition** — For subscribers: People School purchase. For students: Module 1 completion + first coaching call attended.
+3. **Current State** — What happens after opt-in/purchase? Where do people drop off?
 
 ---
 
@@ -40,23 +59,34 @@ Show advancement. Celebrate completions. Make the path visible.
 
 ## Defining Activation
 
-### Find Your Aha Moment
+### Subscriber Activation (Aha Moment = Purchase)
 
-The action that correlates most strongly with retention:
-- What do retained users do that churned users don't?
-- What's the earliest indicator of future engagement?
+The actions that correlate most strongly with People School purchase:
+- Watched the full free training video (not just opted in)
+- Opened 3+ nurture emails
+- Clicked through to People School sales page
+- Visited People School page more than once
 
-**Examples by product type:**
-- Project management: Create first project + add team member
-- Analytics: Install tracking + see first report
-- Design tool: Create first design + export/share
-- Marketplace: Complete first transaction
+**Activation metrics:**
+- % of opt-ins who watch the free training
+- % of opt-ins who open 3+ nurture emails within 14 days
+- % of opt-ins who visit the People School page
+- Time from opt-in to People School purchase
+- Conversion rate by lead magnet source
 
-### Activation Metrics
-- % of signups who reach activation
-- Time to activation
-- Steps to activation
-- Activation by cohort/source
+### Student Activation (Aha Moment = Engaged Learner)
+
+The actions that correlate with course completion and satisfaction:
+- Completed Module 1 (The Charisma Formula) within first week
+- Joined Circle.so community
+- Attended first live coaching call
+- Practiced and reported on first Action Step
+
+**Activation metrics:**
+- % of students who complete Module 1 within 7 days
+- % of students who join Circle.so within 48 hours of purchase
+- % of students who attend a coaching call within first 2 weeks
+- Time from purchase to first community post
 
 ---
 
@@ -180,6 +210,15 @@ For each issue: Finding → Impact → Recommendation → Priority
 ---
 
 ## Common Patterns by Product Type
+
+### Science of People Patterns
+
+| Journey | Key Steps |
+|---------|-----------|
+| Subscriber onboarding | Opt-in → Watch free training → Open nurture emails → Visit People School page → Purchase |
+| Student onboarding | Purchase → Circle.so invite → Module 1 → First Action Step → First coaching call → Community engagement |
+
+### Other Product Types
 
 | Product Type | Key Steps |
 |--------------|-----------|

@@ -9,6 +9,25 @@ metadata:
 
 You are an expert in analytics implementation and measurement. Your goal is to help set up tracking that provides actionable insights for marketing and product decisions.
 
+## Science of People Analytics Context
+
+SoP uses **Cloudflare Zaraz** (not Google Tag Manager) for all third-party script management:
+- **GA4** — via Zaraz (property ID in `wrangler.toml` as `PUBLIC_GA4_ID`)
+- **Meta Pixel** — via Zaraz
+- **Customer.io** — via Zaraz (for email automation tracking)
+
+Zaraz runs at the edge (Cloudflare CDN level), not client-side. This means:
+- No GTM container to manage — tags are configured in the Cloudflare dashboard
+- Better performance (no client-side JS bundle for analytics)
+- Events are sent server-side from Cloudflare's edge, not the browser
+- Custom events use `zaraz.track()` instead of `dataLayer.push()`
+
+**Key conversion events for SoP:**
+- `form_submitted` — email opt-in (lead magnet or newsletter), with properties: `form_id`, `lead_magnet_id`, `source`
+- `squeeze_page_view` — squeeze page visited
+- `cta_clicked` — CTA button clicked, with properties: `button_text`, `location`, `destination`
+- `people_school_interest` — People School page visited or CTA clicked
+
 ## Initial Assessment
 
 **Check for product marketing context first:**
@@ -100,14 +119,16 @@ checkout_payment_completed
 | signup_completed | method, source |
 | demo_requested | - |
 
-### Product/App
+### Content/Education Site (Science of People)
 
 | Event | Properties |
 |-------|------------|
-| onboarding_step_completed | step_number, step_name |
-| feature_used | feature_name |
-| purchase_completed | plan, value |
-| subscription_cancelled | reason |
+| form_submitted | form_id, lead_magnet_id, source, variant |
+| squeeze_page_view | lead_magnet_id, traffic_source |
+| cta_clicked | button_text, location, destination |
+| article_read | slug, category, read_depth |
+| people_school_interest | source_page, cta_text |
+| lead_magnet_downloaded | lead_magnet_id, delivery_method |
 
 **For full event library by business type**: See [references/event-library.md](references/event-library.md)
 

@@ -434,6 +434,17 @@ When facing a marketing challenge, consider:
 | Decision paralysis | Paradox of Choice, Default Effect, Nudge Theory |
 | Onboarding | Goal-Gradient, IKEA Effect, Commitment & Consistency |
 
+### Science of People Applications
+
+| SoP Challenge | Relevant Models | How to Apply |
+|---------------|-----------------|--------------|
+| Squeeze page opt-ins | Reciprocity, Zero-Price Effect, Commitment & Consistency | Free training = reciprocity trigger; email opt-in = small commitment leading to People School |
+| People School ($2,495) price | Anchoring, Mental Accounting, Loss Aversion, Framing | Anchor against cost of missed promotions; frame as "$6.80/day for a career transformation"; emphasize what they lose by NOT acting |
+| Blog → email conversion | Zeigarnik Effect, Goal-Gradient, Endowment Effect | Mid-content forms create open loops ("want the full framework?"); progress toward mastery; free trainings create ownership |
+| Vanessa's brand trust | Authority Bias, Pratfall Effect, Liking/Similarity | Harvard credentials + "recovering awkward person" vulnerability = authority + relatability |
+| Course completion rates | Goal-Gradient, IKEA Effect, Peak-End Rule | Show module progress; celebrate Action Step practice; design memorable peaks in each module |
+| Newsletter retention (800K+) | Mere Exposure, Compounding, Reciprocity | Consistent weekly value builds familiarity; free knowledge creates obligation; compounds authority over time |
+
 ---
 
 ## Task-Specific Questions

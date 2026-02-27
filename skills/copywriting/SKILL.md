@@ -152,18 +152,19 @@ Puns and wit make copy memorable—but only if it fits the brand and doesn't und
 - Submit, Sign Up, Learn More, Click Here, Get Started
 
 **Strong CTAs (use):**
-- Start Free Trial
-- Get [Specific Thing]
-- See [Product] in Action
-- Create Your First [Thing]
+- YES! Send my free training
+- Get the [Specific Resource]
 - Download the Guide
+- Join [X]+ students
+- Start Free
 
 **Formula:** [Action Verb] + [What They Get] + [Qualifier if needed]
 
 Examples:
-- "Start My Free Trial"
-- "Get the Complete Checklist"
-- "See Pricing for My Team"
+- "YES! Send my free training"
+- "Get the Body Language Cheat Sheet"
+- "Download the Complete Guide"
+- "Join 4M+ students"
 
 ---
 
@@ -179,15 +180,22 @@ Examples:
 - Match headline to ad/traffic source
 - Complete argument on one page
 
-### Pricing Page
-- Help visitors choose the right plan
-- Address "which is right for me?" anxiety
-- Make recommended plan obvious
+### Squeeze Page (Lead Magnet Landing Page)
+- Single message, single form — no navigation distractions
+- Hero image of Vanessa or the resource
+- Bullet benefits (3-5) of what they'll learn
+- Social proof: "Join 4M+ students" / star rating
+- CTA: First-person, benefit-oriented ("YES! Send my free training")
+- Progressive profiling: name + email first, then phone capture
 
-### Feature Page
-- Connect feature → benefit → outcome
-- Show use cases and examples
-- Clear path to try or buy
+### Course Sales Page
+- Lead with the transformation, not the curriculum
+- Problem → agitation → solution arc: "Talent doesn't open doors — people do"
+- Module overview with benefit-focused titles (not just topic names)
+- Social proof: student count, satisfaction rate, credentials (Harvard, SHRM)
+- Objection handling: FAQ, guarantee, "who this is NOT for"
+- Multiple CTAs throughout the long-form page
+- Testimonials with specific outcomes, not just praise
 
 ### About Page
 - Tell the story of why you exist
@@ -198,22 +206,26 @@ Examples:
 
 ## Voice and Tone
 
-Before writing, establish:
+### Science of People Voice
 
-**Formality level:**
-- Casual/conversational
-- Professional but friendly
-- Formal/enterprise
+When writing for Science of People, follow these voice rules:
 
-**Brand personality:**
-- Playful or serious?
-- Bold or understated?
-- Technical or accessible?
+1. **Lead with empathy, then science** — acknowledge the feeling before citing the research. "If you've ever felt invisible in meetings, you're not alone. A Stanford study found..."
+2. **Always include Action Steps** — every section should end with a specific, immediately practicable technique. Use the "Action Step:" callout format.
+3. **Cite research accessibly** — "A Stanford study found..." not "According to Smith et al. (2019)..." Make it conversational.
+4. **Normalize struggle** — "Like many people..." / "If you've ever felt..." / "You're not alone in this." Reduce shame, position readers as capable people who can improve.
+5. **Be specific, not vague** — concrete examples, real scenarios, exact phrases to use. Never just "be more confident."
+6. **Reframe problems as solvable** — "It's not you, it's your cues!" / "The good news: charisma is learnable." Give readers agency.
+7. **Personal and self-disclosing** — Vanessa opens with anecdotes and confessions. The tone is warm and collegial, not professorial.
+8. **No exclamation point overuse** — warmth comes from word choice, not punctuation.
+9. **Occasional humor** — "Bottom line:", "Let's face it:", friendly phrasing. Never stiff or corporate.
 
-Maintain consistency, but adjust intensity:
-- Headlines can be bolder
-- Body copy should be clearer
-- CTAs should be action-oriented
+**Words to use:** people skills, science-backed, actionable, cues, charisma, confidence, connection, body language, communication, first impression, presence, influence
+**Words to avoid:** soft skills (we say "people skills"), hacks, tricks, manipulation, self-help (too broad), therapy (we're not therapists)
+
+### For Non-SoP Projects
+
+If writing for a different brand, establish formality level, brand personality, and tone before writing. Maintain consistency but adjust intensity (headlines bolder, body copy clearer, CTAs action-oriented).
 
 ---
 
